@@ -1,0 +1,63 @@
+ <style>body {
+  background-color: grey;
+  margin: 0;
+}
+
+.lesson {
+  display: flex;
+  flex-direction: column;
+  line-height: 65px;
+  font-size: 40px;
+  font-weight: 900;
+  text-align: center;
+  font-family: Anta;
+  height: 350px;
+  overflow: scroll;
+}
+
+.clock {
+  position: fixed;
+  font-family: Anton;
+  font-size: 50px;
+  font-weight: 200;
+  text-align: center;
+  border-bottom: 3px solid black;
+  margin-left: 3%;
+}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anta&family=Anton&family=Madimi+One&family=Micro+5&family=Oswald:wght@200..700&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anta&family=Madimi+One&family=Micro+5&family=Oswald:wght@200..700&family=Permanent+Marker&display=swap" rel="stylesheet">
+<body>
+  <div class="cl"><span id="clock" class="clock"></span></div>
+  <div class="lesson">
+  <div>8:30-10:30 math</div>
+  <div>9:30-10:30 Voyger</div>
+  <div>10:30-11:30 ELA</div>
+  <div>11:30-12:20 Science</div>
+  <div>12:20-12:55 Lunch</div>
+  <div>12:55-1:25 Latin</div>
+  <div>1:25-1:55 SEL</div>
+  <div>1:55-2:45 Social Studies</div>
+  <div>2:45-3:00 Clean up</div>
+    <div>
+</body>
+    <script> const timeElement = document.getElementById("clock");
+
+function updateTime() {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
+
+    // Format the string with leading zeroes
+    const clockStr = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+    timeElement.innerText = clockStr;
+}
+
+updateTime();
+setInterval(updateTime, 1000);</script>
